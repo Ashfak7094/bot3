@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<style>
+body{margin:0;background:#000;color:#fff;font-family:Arial}
+.sidebar{
+    width:250px;height:100vh;background:#111;
+    position:fixed;padding:20px;
+}
+.main{margin-left:270px;padding:20px}
+.card{
+    background:#111;padding:15px;border-radius:8px;
+    margin-bottom:15px;
+}
+button{
+    padding:10px 20px;background:#00ffcc;
+    border:none;font-weight:bold;margin:5px;
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+<h3>{{ user.title }} {{ user.nickname }}</h3>
+<p>UID: {{ user.uid }}</p>
+<p>Gas: ${{ "%.2f"|format(user.gas_wallet) }}</p>
+<p>Total Profit: ${{ "%.2f"|format(user.total_profit) }}</p>
+<a href="/profile">Profile</a><br><br>
+<a href="/local_admin">Local Admin</a><br>
+<a href="/power_admin">Power Admin</a>
+</div>
+
+<div class="main">
+<div class="card">
+<h3>Binance API</h3>
+{% if user.api_key %}
+<button>Disconnect</button>
+<button>Start Trade</button>
+{% else %}
+<p>API Not Connected</p>
+{% endif %}
+</div>
+
+<div class="card">
+<h3>Referral</h3>
+<p>Your Code: <b>{{ user.referral_code }}</b></p>
+<p>Invite Link: {{ request.host_url }}register?ref={{ user.referral_code }}</p>
+</div>
+
+<div class="card">
+<h3>Live Trading Coins</h3>
+<p>Top 20 Binance movers – Real-time Engine</p>
+</div>
+</div>
+</body>
+</html>
