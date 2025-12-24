@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local Admin</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial}
+input,button{padding:8px;margin:5px}
+button{background:#00ffcc;border:none;font-weight:bold}
+</style>
+</head>
+<body>
+<h2>Local Admin Panel</h2>
+<form method="post">
+<input name="password" placeholder="Admin Password">
+<input name="uid" placeholder="User UID">
+<input name="amount" placeholder="Gas Amount">
+<button>Recharge Gas</button>
+</form>
+
+<h3>Users</h3>
+{% for u in users %}
+<p>{{ u.uid }} | {{ u.nickname }} | Gas: ${{ u.gas_wallet }}</p>
+{% endfor %}
+</body>
+</html>
