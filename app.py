@@ -14,7 +14,9 @@ login_manager.login_view = "login.login"
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    # பழைய வரி: return User.query.get(int(user_id))
+    # திருத்தப்பட்ட வரி (SQLAlchemy 2.0+):
+    return db.session.get(User, int(user_id))
 
 from auth.register import register_bp
 from auth.login import login_bp
@@ -31,4 +33,5 @@ app.register_blueprint(power_admin_bp)
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debu
+g=True)
