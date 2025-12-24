@@ -33,5 +33,4 @@ app.register_blueprint(power_admin_bp)
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(host="0.0.0.0", port=5000, debu
-g=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
