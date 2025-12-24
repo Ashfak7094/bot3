@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial}
+form{width:360px;margin:auto;margin-top:40px}
+input,select{
+    width:100%;padding:10px;margin:8px 0;
+    background:#111;color:#fff;border:1px solid #333;
+}
+button{
+    width:100%;padding:12px;background:#00ffcc;
+    border:none;font-weight:bold;
+}
+</style>
+</head>
+<body>
+<form method="post">
+<h2>Create Account</h2>
+
+<select name="title">
+<option>Mr</option>
+<option>Mrs</option>
+<option>Dr</option>
+</select>
+
+<input name="nickname" placeholder="Nickname" required>
+<input name="mobile" placeholder="Mobile Number" required>
+<input name="username" placeholder="Username" required>
+
+<input type="password" name="password" placeholder="Password" required>
+<input type="password" name="repass" placeholder="Re-enter Password" required>
+
+<input name="refcode" placeholder="Referral Code (optional)">
+<button>Create Account</button>
+</form>
+</body>
+</html>
