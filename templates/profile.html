@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial}
+form{width:350px;margin:auto;margin-top:40px}
+input,button{
+    width:100%;padding:10px;margin:8px 0;
+}
+input{background:#111;color:#fff;border:1px solid #333}
+button{background:#00ffcc;font-weight:bold;border:none}
+</style>
+</head>
+<body>
+<form>
+<h2>Profile</h2>
+<input value="{{ user.nickname }}" readonly>
+<input value="{{ user.mobile }}" readonly>
+<input placeholder="Binance API Key">
+<input placeholder="Binance Secret Key">
+<button>Update</button>
+</form>
+</body>
+</html>
