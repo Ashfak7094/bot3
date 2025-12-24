@@ -1,0 +1,19 @@
+import os
+
+SECRET_KEY = "VISIONX_AI_ENGINE_2025"
+
+BINANCE_ONLY = True
+
+TRIAL_GAS = 1.00
+MIN_GAS_REQUIRED = 0.50
+
+REFERRAL_REWARDS = {
+    1: 0.50,
+    2: 0.25,
+    3: 0.10
+}
+
+LOCAL_ADMIN_PASS = "local123"
+POWER_ADMIN_PASS = "power789"
+
+DATABASE_URI = "sqlite:///database.db"
